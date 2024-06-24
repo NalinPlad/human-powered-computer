@@ -1,0 +1,23 @@
+---
+interface Props {
+	source: string;
+}
+
+const { source } = Astro.props;
+
+---
+
+
+<div class="flex flex-col items-center justify-center whitespace-pre bg-base-300 w-fit rounded-md shadow-xl">
+    <b>INTEL x86 ASM</b>
+    <code id="code" class="!p-5 rounded-b-lg">{source}</code>
+</div>
+<script>
+    import hljs from 'highlight.js/lib/core';
+    import x86asm from 'highlight.js/lib/languages/x86asm';
+
+    hljs.registerLanguage('x86asm', x86asm);
+
+    hljs.highlightElement(document.getElementById('code'));
+
+</script>
