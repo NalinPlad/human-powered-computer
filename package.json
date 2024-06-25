@@ -10,11 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/svelte": "^5.6.0",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.11.0",
     "highlight.js": "^11.9.0",
     "highlightjs-line-numbers.js": "^2.8.0",
-    "tailwindcss": "^3.4.4"
+    "svelte": "^4.2.18",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.5.2"
   },
   "devDependencies": {
     "daisyui": "^4.12.7"

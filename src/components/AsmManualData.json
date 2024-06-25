@@ -1,0 +1,34 @@
+{
+    "instructions": [
+        {
+            "mnemonic": "ADD",
+            "name": "Add",
+            "description": "Adds two arguments [D,S] storing the result in the (D)estination register.",
+            "syntax": "ADD D, S"
+        },
+        {
+            "mnemonic": "MOV",
+            "name": "Move",
+            "description": "Moves the value of the (S)ource register to the (D)estination register.",
+            "syntax": "MOV D, S"
+        },
+        {
+            "mnemonic": "POP",
+            "name": "Pop",
+            "description": "Pops the top value from the stack into the (D)estination register.",
+            "syntax": "POP D"
+        },
+        {
+            "mnemonic": "PUSH",
+            "name": "Push",
+            "description": "Pushes the value of the (S)ource register onto the stack.",
+            "syntax": "PUSH S"
+        },
+        {
+            "mnemonic": "SUB",
+            "name": "Subtract",
+            "description": "Subtracts the value of the (S)ource register from the (D)estination register storing the result in the (D)estination register.",
+            "syntax": "SUB D, S"
+        }
+    ]
+}
