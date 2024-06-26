@@ -2,7 +2,7 @@ int magic(int a, int b) {
   return a * b + 13;
 }
 
-int test(int a, int b) {
+int example(int a, int b) {
   return a / b - 12;
 }
 

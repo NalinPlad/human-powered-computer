@@ -1,10 +1,13 @@
 import { $ } from "bun";
 
-await $`gcc -S -masm=intel test.c`;
+await $`gcc test.c`;
 
 const objdump_output = await $`objdump -D -M intel --no-show-raw-insn a.out`.text();
 
-let output_data = [];
+let output_data = {
+    "blocks": [],
+    "raw_full": "",
+};
 
 const blocks = objdump_output.split("\n\n");
 blocks.shift();
@@ -20,7 +23,8 @@ blocks.forEach((block) => {
     
     let block_data = {
         "name": block_name,
-        "instructions": []
+        "instructions": [],
+        "raw": ""
     }
 
     block.forEach((line, ind) => {
@@ -39,7 +43,19 @@ blocks.forEach((block) => {
         });
     });
 
-    output_data.push(block_data);
+    block_data.raw += block_name + "\n";
+    block_data.instructions.forEach((instruction) => {
+        block_data.raw += "\t" + instruction.instruction + "\n";
+    });
+
+    output_data.raw_full += block_data.raw + "\n";
+
+    output_data.blocks.push(block_data);
 });
 
 console.log(JSON.stringify(output_data, null, 2));
+
+// write json to output.json
+await $`echo '${JSON.stringify(output_data, null, 2)}' > output.json`;
+
+await $`rm a.out`;

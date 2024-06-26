@@ -1,0 +1,155 @@
+{
+  "blocks": [
+    {
+      "name": "<_magic>:",
+      "instructions": [
+        {
+          "address": "100000f30",
+          "instruction": "push rbp"
+        },
+        {
+          "address": "100000f31",
+          "instruction": "mov rbp, rsp"
+        },
+        {
+          "address": "100000f34",
+          "instruction": "mov dword ptr [rbp - 4], edi"
+        },
+        {
+          "address": "100000f37",
+          "instruction": "mov dword ptr [rbp - 8], esi"
+        },
+        {
+          "address": "100000f3a",
+          "instruction": "mov eax, dword ptr [rbp - 4]"
+        },
+        {
+          "address": "100000f3d",
+          "instruction": "imul eax, dword ptr [rbp - 8]"
+        },
+        {
+          "address": "100000f41",
+          "instruction": "add eax, 13"
+        },
+        {
+          "address": "100000f44",
+          "instruction": "pop rbp"
+        },
+        {
+          "address": "100000f45",
+          "instruction": "ret"
+        },
+        {
+          "address": "100000f46",
+          "instruction": "nop word ptr cs:[rax + rax]"
+        }
+      ],
+      "raw": "<_magic>:\n\tpush rbp\n\tmov rbp, rsp\n\tmov dword ptr [rbp - 4], edi\n\tmov dword ptr [rbp - 8], esi\n\tmov eax, dword ptr [rbp - 4]\n\timul eax, dword ptr [rbp - 8]\n\tadd eax, 13\n\tpop rbp\n\tret\n\tnop word ptr cs:[rax + rax]\n"
+    },
+    {
+      "name": "<_example>:",
+      "instructions": [
+        {
+          "address": "100000f50",
+          "instruction": "push rbp"
+        },
+        {
+          "address": "100000f51",
+          "instruction": "mov rbp, rsp"
+        },
+        {
+          "address": "100000f54",
+          "instruction": "mov dword ptr [rbp - 4], edi"
+        },
+        {
+          "address": "100000f57",
+          "instruction": "mov dword ptr [rbp - 8], esi"
+        },
+        {
+          "address": "100000f5a",
+          "instruction": "mov eax, dword ptr [rbp - 4]"
+        },
+        {
+          "address": "100000f5d",
+          "instruction": "cdq"
+        },
+        {
+          "address": "100000f5e",
+          "instruction": "idiv dword ptr [rbp - 8]"
+        },
+        {
+          "address": "100000f61",
+          "instruction": "sub eax, 12"
+        },
+        {
+          "address": "100000f64",
+          "instruction": "pop rbp"
+        },
+        {
+          "address": "100000f65",
+          "instruction": "ret"
+        },
+        {
+          "address": "100000f66",
+          "instruction": "nop word ptr cs:[rax + rax]"
+        }
+      ],
+      "raw": "<_example>:\n\tpush rbp\n\tmov rbp, rsp\n\tmov dword ptr [rbp - 4], edi\n\tmov dword ptr [rbp - 8], esi\n\tmov eax, dword ptr [rbp - 4]\n\tcdq\n\tidiv dword ptr [rbp - 8]\n\tsub eax, 12\n\tpop rbp\n\tret\n\tnop word ptr cs:[rax + rax]\n"
+    },
+    {
+      "name": "<_main>:",
+      "instructions": [
+        {
+          "address": "100000f70",
+          "instruction": "push rbp"
+        },
+        {
+          "address": "100000f71",
+          "instruction": "mov rbp, rsp"
+        },
+        {
+          "address": "100000f74",
+          "instruction": "sub rsp, 16"
+        },
+        {
+          "address": "100000f78",
+          "instruction": "mov dword ptr [rbp - 4], 0"
+        },
+        {
+          "address": "100000f7f",
+          "instruction": "mov dword ptr [rbp - 8], 25"
+        },
+        {
+          "address": "100000f86",
+          "instruction": "mov dword ptr [rbp - 12], 13"
+        },
+        {
+          "address": "100000f8d",
+          "instruction": "mov edi, dword ptr [rbp - 8]"
+        },
+        {
+          "address": "100000f90",
+          "instruction": "mov esi, dword ptr [rbp - 12]"
+        },
+        {
+          "address": "100000f93",
+          "instruction": "call 0x100000f30 <_magic>"
+        },
+        {
+          "address": "100000f98",
+          "instruction": "add rsp, 16"
+        },
+        {
+          "address": "100000f9c",
+          "instruction": "pop rbp"
+        },
+        {
+          "address": "100000f9d",
+          "instruction": "ret"
+        }
+      ],
+      "raw": "<_main>:\n\tpush rbp\n\tmov rbp, rsp\n\tsub rsp, 16\n\tmov dword ptr [rbp - 4], 0\n\tmov dword ptr [rbp - 8], 25\n\tmov dword ptr [rbp - 12], 13\n\tmov edi, dword ptr [rbp - 8]\n\tmov esi, dword ptr [rbp - 12]\n\tcall 0x100000f30 <_magic>\n\tadd rsp, 16\n\tpop rbp\n\tret\n"
+    }
+  ],
+  "raw_full": "<_magic>:\n\tpush rbp\n\tmov rbp, rsp\n\tmov dword ptr [rbp - 4], edi\n\tmov dword ptr [rbp - 8], esi\n\tmov eax, dword ptr [rbp - 4]\n\timul eax, dword ptr [rbp - 8]\n\tadd eax, 13\n\tpop rbp\n\tret\n\tnop word ptr cs:[rax + rax]\n\n<_example>:\n\tpush rbp\n\tmov rbp, rsp\n\tmov dword ptr [rbp - 4], edi\n\tmov dword ptr [rbp - 8], esi\n\tmov eax, dword ptr [rbp - 4]\n\tcdq\n\tidiv dword ptr [rbp - 8]\n\tsub eax, 12\n\tpop rbp\n\tret\n\tnop word ptr cs:[rax + rax]\n\n<_main>:\n\tpush rbp\n\tmov rbp, rsp\n\tsub rsp, 16\n\tmov dword ptr [rbp - 4], 0\n\tmov dword ptr [rbp - 8], 25\n\tmov dword ptr [rbp - 12], 13\n\tmov edi, dword ptr [rbp - 8]\n\tmov esi, dword ptr [rbp - 12]\n\tcall 0x100000f30 <_magic>\n\tadd rsp, 16\n\tpop rbp\n\tret\n\n"
+}
