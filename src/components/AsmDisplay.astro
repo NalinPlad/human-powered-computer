@@ -5,14 +5,21 @@ interface Props {
 
 const { source } = Astro.props;
 
+const starting_address = 0x1000;
+
 ---
 
 
-<div class="flex flex-col items-center justify-center whitespace-pre bg-base-300 w-fit h-fit rounded-md shadow-xl">
-    <b>INTEL x86 ASM</b>
-    <div>
-        <code id="code" class="!p-5 rounded-b-lg">{source}</code>
+<div class="flex flex-col items-center bg-slate-900 p-5 gap-y-5 rounded-xl">
+    <b class="font-mono">x86 INSTRUCTIONS</b>
+    <!-- <div class="rounded"> -->
+    <div class="flex">
+        <div class="h-full w-28 bg-slate-800">
+            <pre>{}</pre>  
+        </div>
+        <code id="code" class="whitespace-pre">{source}</code>
     </div>
+    <!-- </div> -->
 </div>
 <script>
     import hljs from 'highlight.js/lib/core';
