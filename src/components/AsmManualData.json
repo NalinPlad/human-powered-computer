@@ -29,6 +29,72 @@
             "name": "Subtract",
             "description": "Subtracts the value of the (S)ource register from the (D)estination register storing the result in the (D)estination register.",
             "syntax": "SUB D, S"
+        },
+        {
+            "mnemonic": "MUL",
+            "name": "Unsigned Multiply",
+            "description": "Multiplies the value of the (S)ource register by the value of the (D)estination register storing the result in the (D)estination register.",
+            "syntax": "MUL D, S"
+        },
+        {
+            "mnemonic": "IMUL",
+            "name": "Signed Multiply",
+            "description": "Multiplies the value of the (S)ource register by the value of the (D)estination register storing the result in the (D)estination register.",
+            "syntax": "IMUL D, S"
+        },
+        {
+            "mnemonic": "DIV",
+            "name": "Unsigned Divide",
+            "description": "Divides the value of the (D)estination register by the value of the (S)ource register storing the result in the (D)estination register.",
+            "syntax": "DIV D, S"
+        },
+        {
+            "mnemonic": "IDIV",
+            "name": "Signed Divide",
+            "description": "Divides the value of the (D)estination register by the value of the (S)ource register storing the result in the (D)estination register.",
+            "syntax": "IDIV D, S"
+        },
+        {
+            "mnemonic": "AND",
+            "name": "Bitwise AND",
+            "description": "Performs a bitwise AND operation on the value of the (S)ource register and the value of the (D)estination register storing the result in the (D)estination register.",
+            "syntax": "AND D, S"
+        },
+        {
+            "mnemonic": "OR",
+            "name": "Bitwise OR",
+            "description": "Performs a bitwise OR operation on the value of the (S)ource register and the value of the (D)estination register storing the result in the (D)estination register.",
+            "syntax": "OR D, S"
+        },
+        {
+            "mnemonic": "XOR",
+            "name": "Bitwise XOR",
+            "description": "Performs a bitwise XOR operation on the value of the (S)ource register and the value of the (D)estination register storing the result in the (D)estination register.",
+            "syntax": "XOR D, S"
+        },
+        {
+            "mnemonic": "NOT",
+            "name": "Bitwise NOT",
+            "description": "Performs a bitwise NOT operation on the value of the (S)ource register storing the result in the (D)estination register.",
+            "syntax": "NOT D, S"
+        },
+        {
+            "mnemonic": "SHL",
+            "name": "Shift Left",
+            "description": "Shifts the value of the (D)estination register to the left by the value of the (S)ource register storing the result in the (D)estination register.",
+            "syntax": "SHL D, S"
+        },
+        {
+            "mnemonic": "SHR",
+            "name": "Shift Right",
+            "description": "Shifts the value of the (D)estination register to the right by the value of the (S)ource register storing the result in the (D)estination register.",
+            "syntax": "SHR D, S"
+        },
+        {
+            "mnemonic": "JMP",
+            "name": "Jump",
+            "description": "Jumps to the part of the program specified by the symbolic or numeric (L)abel",
+            "syntax": "JMP L"
         }
     ]
 }

@@ -2,10 +2,12 @@
 import Layout from "../layouts/Layout.astro"
 import AsmDisplay from "../components/AsmDisplay.astro"
 import AsmManual from "../components/AsmManual.svelte"
+import CPURegisters from "../components/CPURegisters.svelte"
 ---
 
 <Layout title="CPYOU">
-    <main class="flex items-center justify-center h-screen gap-10">
+    <main class="flex flex-wrap gap-10 p-10 justify-around">
+        <CPURegisters client:load/>
         <AsmDisplay source=`square:\n        push    rbp\n        mov     rbp, rsp\n        mov     DWORD PTR [rbp-4], edi\n        mov     eax, DWORD PTR [rbp-4]\n        imul    eax, eax\n        pop     rbp\n        ret`/>
         <AsmManual client:load/>
     </main>

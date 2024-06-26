@@ -5,4 +5,10 @@ export default {
 		extend: {},
 	},
 	plugins: [require('daisyui')],
+	safelist: [
+		{
+			pattern: /bg-yellow-*/,
+			pattern: /bg-yellow-*/,
+		},
+	]
 }

@@ -1,0 +1,276 @@
+{
+    "sizes": [
+        {
+            "name": "64-bit",
+            "bits": 64,
+            "registers": [
+                {
+                    "mnemonic": "RAX",
+                    "description": "Accumulator",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "RBX",
+                    "description": "Base",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "RCX",
+                    "description": "Counter",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "RDX",
+                    "description": "Data",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "RDI",
+                    "description": "Destination Index",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "RSI",
+                    "description": "Source Index",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "RBP",
+                    "description": "Base Pointer",
+                    "type": "reserved"
+                },
+                {
+                    "mnemonic": "RSP",
+                    "description": "Stack Pointer",
+                    "type": "reserved"
+                },
+                {
+                    "mnemonic": "RIP",
+                    "description": "Instruction Pointer",
+                    "type": "reserved"
+                },
+                {
+                    "mnemonic": "R8",
+                    "description": "General Purpose",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "R9",
+                    "description": "General Purpose",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "R10",
+                    "description": "General Purpose",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "R11",
+                    "description": "General Purpose",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "R12",
+                    "description": "General Purpose",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "R13",
+                    "description": "General Purpose",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "R14",
+                    "description": "General Purpose",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "R15",
+                    "description": "General Purpose",
+                    "type": "general-purpose"
+                }
+            ]
+        },
+        {
+            "name": "32-bit",
+            "bits": 32,
+            "registers": [
+                {
+                    "mnemonic": "EAX",
+                    "description": "Accumulator",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "EBX",
+                    "description": "Base",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "ECX",
+                    "description": "Counter",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "EDX",
+                    "description": "Data",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "EDI",
+                    "description": "Destination Index",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "ESI",
+                    "description": "Source Index",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "EBP",
+                    "description": "Base Pointer",
+                    "type": "reserved"
+                },
+                {
+                    "mnemonic": "ESP",
+                    "description": "Stack Pointer",
+                    "type": "reserved"
+                },
+                {
+                    "mnemonic": "EIP",
+                    "description": "Instruction Pointer",
+                    "type": "reserved"
+                }
+
+            ]
+        },
+        {
+            "name": "16-bit",
+            "bits": 16,
+            "registers": [
+                {
+                    "mnemonic": "AX",
+                    "description": "Accumulator",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "BX",
+                    "description": "Base",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "CX",
+                    "description": "Counter",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "DX",
+                    "description": "Data",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "DI",
+                    "description": "Destination Index",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "SI",
+                    "description": "Source Index",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "BP",
+                    "description": "Base Pointer",
+                    "type": "reserved"
+                },
+                {
+                    "mnemonic": "SP",
+                    "description": "Stack Pointer",
+                    "type": "reserved"
+                },
+                {
+                    "mnemonic": "IP",
+                    "description": "Instruction Pointer",
+                    "type": "reserved"
+                }
+            ]
+        },
+        {
+            "name": "8-bit Low",
+            "bits": 8,
+            "registers": [
+                {
+                    "mnemonic": "AL",
+                    "description": "Accumulator",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "BL",
+                    "description": "Base",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "CL",
+                    "description": "Counter",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "DL",
+                    "description": "Data",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "DIL",
+                    "description": "Destination Index",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "SIL",
+                    "description": "Source Index",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "BPL",
+                    "description": "Base Pointer",
+                    "type": "reserved"
+                },
+                {
+                    "mnemonic": "SPL",
+                    "description": "Stack Pointer",
+                    "type": "reserved"
+                },
+                {
+                    "mnemonic": "IPL",
+                    "description": "Instruction Pointer",
+                    "type": "reserved"
+                }
+            ]
+        },
+        {
+            "name": "8-bit High",
+            "bits": 8,
+            "registers": [
+                {
+                    "mnemonic": "AH",
+                    "description": "Accumulator",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "BH",
+                    "description": "Base",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "CH",
+                    "description": "Counter",
+                    "type": "general-purpose"
+                },
+                {
+                    "mnemonic": "DH",
+                    "description": "Data",
+                    "type": "general-purpose"
+                }
+            ]
+        }
+
+    ]
+}

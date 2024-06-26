@@ -8,9 +8,11 @@ const { source } = Astro.props;
 ---
 
 
-<div class="flex flex-col items-center justify-center whitespace-pre bg-base-300 w-fit rounded-md shadow-xl">
+<div class="flex flex-col items-center justify-center whitespace-pre bg-base-300 w-fit h-fit rounded-md shadow-xl">
     <b>INTEL x86 ASM</b>
-    <code id="code" class="!p-5 rounded-b-lg">{source}</code>
+    <div>
+        <code id="code" class="!p-5 rounded-b-lg">{source}</code>
+    </div>
 </div>
 <script>
     import hljs from 'highlight.js/lib/core';
