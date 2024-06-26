@@ -26,7 +26,10 @@
                     {#if instruction.address == $RIP}
                         <span class="bg-slate-500 text-black px-3"><b>RIP </b>0x{instruction.address.replace("1000", "…")+"\n"}</span>
                     {:else}
-                        <span class="">0x{instruction.address.replace("10000","…")+"\n"}</span>
+                        <!-- svelte-ignore a11y-click-events-have-key-events -->
+                        <!-- svelte-ignore a11y-no-static-element-interactions -->
+                        <!-- svelte-ignore a11y-missing-attribute -->
+                        <a class="hover:bg-slate-600 cursor-pointer" on:click={() => RIP.set(instruction.address)}>0x{instruction.address.replace("1000","…")+"\n"}</a>
                     {/if}
                 {/each}
                 <br/>

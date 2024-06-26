@@ -9,7 +9,7 @@ import CPURegisters from "../components/CPURegisters.svelte"
 <Layout title="CPYOU">
     <main class="flex flex-wrap gap-10 p-10 justify-around">
         <CPURegisters client:load/>
-        <AsmDisplay />
+        <AsmDisplay client:load/>
         <AsmManual client:load/>
     </main>
 </Layout>
