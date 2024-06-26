@@ -10,28 +10,15 @@
     <b class="font-mono">x86 INSTRUCTIONS</b>
     <!-- <div class="rounded"> -->
     <div class="flex">
-
-        <code class="whitespace-pre bg-slate-800 py-4 px-4">
+        <div class=" bg-slate-800 py-4 px-4 flex flex-col align-top gap-0 font-mono">
             {#each asm_data.blocks as block }
-            
-                {"\n"}
+                <br/>
                 {#each block.instructions as instruction}
-                    <span>0x{instruction.address.replace("10000","…")+"\n"}</span>
+                    <span class="">0x{instruction.address.replace("10000","…")+"\n"}</span>
                 {/each}
-                {"\n"}
+                <br/>
             {/each}
-        </code>
-
-        <!-- <code class="whitespace-pre p-2 bg-black">
-            {#each asm_data.blocks as block }
-                {block.name + "\n"}
-                {#each block.instructions as instruction}
-
-                    <Highlight language={x86asm} code={`\t${instruction.instruction}\n`} class="!p-0"/>
-
-                {/each}
-            {/each}
-        </code> -->
+        </div>
         <Highlight language={x86asm} code={asm_data.raw_full} class="!p-0 bg-slate-800"/>
         
     </div>
