@@ -55,7 +55,7 @@
         <div class="flex flex-wrap">
             {#each tab_data.registers as register}
                 <div class="p-2 text-xs {colors[register.type]} border-green-100 border">
-                    <span>{register.mnemonic} <i class="text-xs {colors[register.type+"_SYMBOL"]}">{register.type=="general-purpose" ? "G" : "R"}</i></span>
+                    <span class="cursor-default">{register.mnemonic} <i class="text-xs {colors[register.type+"_SYMBOL"]}">{register.type=="general-purpose" ? "G" : "R"}</i></span>
                     <br/>
                     {#if register.type == "general-purpose"}
                         <span class="text-yellow-300 flex">
@@ -68,10 +68,10 @@
                             </span>
                             <input 
                                 type="text" 
-                                class="font-mono"
+                                class="font-mono cursor-text"
                                 max="{parseInt("1".repeat(tab_data.bits),2)}" 
                                 style="/*max-width: {parseInt("1".repeat(tab_data.bits),2).toString().length}ch;*/"
-                                size={$register_data[register.mnemonic].data.length+2}
+                                size={$register_data[register.mnemonic].data.length+1}
                                 value={$register_data[register.mnemonic].data}
                                 on:keydown={(e) => {
                                     // check if its a digit
@@ -96,7 +96,7 @@
                             />
                         </span>
                     {:else}
-                        <span class="text-yellow-300 flex font-mono">
+                        <span class="text-yellow-300 flex font-mono cursor-default">
                             <span class="text-yellow-100">
                                 {#if $register_data[register.mnemonic].base == 16}
                                     0x
