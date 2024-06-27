@@ -10,7 +10,8 @@ const special_initializations = {
 /**
  * @typedef {Object} register
  * @property {string} data
- * @property {number} size
+ * @property {number} bits
+ * @property {number} base
 */
 
 /** @type {import('nanostores').MapStore<Record<string, register>>} */
@@ -19,11 +20,12 @@ export const register_data = map({});
 
 
 
-export function setRegisterValue(register, value) {
-    console.log(register, value);
+export function setRegisterValue(register, value, base = 10) {
+    // console.log(register, value);
     register_data.setKey(register, {
         "data": value,
-        "bits": register_data.get(register).bits
+        "bits": register_data.get()[register].bits,
+        "base": base
     });
 }
 
@@ -45,7 +47,8 @@ export function initRegisters() {
     
             register_data.setKey(r.mnemonic, {
                 "data": val,
-                "bits": s.bits
+                "bits": s.bits,
+                "base": 10,
             });
         });
     });

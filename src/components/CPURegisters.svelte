@@ -22,9 +22,15 @@
 </script>
 <div class="flex flex-col bg-cyan-900 p-2 rounded-xl w-96 h-fit shadow-xl justify-center items-center">
     <h1 class="text-2xl font-serif text-yellow-300 text-center drop-shadow-lg mb-0"><b>CPYOU</b> <i class="text-yellow-400">Registers</i></h1>
-    <b class="text-center mb-1 text-white bg-cyan-800 w-fit">BASE 10</b>
+    <!-- <b class="text-center mb-2 text-white bg-cyan-800 w-fit text-xs"><span class="font-serif italic">Now in... </span>BASE 10!</b> -->
+     <input 
+        type="text"
+        class="font-mono"
+        max=10
+        size="3"
+     />
     <!-- svelte-ignore a11y-missing-attribute -->
-    <div role="tablist" class="tabs tabs-lifted">
+    <div role="tablist" class="tabs tabs-lifted w-full">
 
         {#each tab_names as name}
             <!-- svelte-ignore a11y-interactive-supports-focus -->
@@ -44,14 +50,63 @@
         {/each}
     </div>
 
-    <div class="{colors[tab_data.bits]} p-1 h-fit rounded-b-md">
+    <div class="{colors[tab_data.bits]} p-1 h-fit rounded-b-md w-full">
         <!-- <h1 class="text-center text-black font-mono">{tab_data.bits}B</h1> -->
         <div class="flex flex-wrap">
             {#each tab_data.registers as register}
                 <div class="p-2 text-xs {colors[register.type]} border-green-100 border">
                     <span>{register.mnemonic} <i class="text-xs {colors[register.type+"_SYMBOL"]}">{register.type=="general-purpose" ? "G" : "R"}</i></span>
                     <br/>
-                    <span class="text-yellow-300">{$register_data[register.mnemonic].data}</span>
+                    {#if register.type == "general-purpose"}
+                        <span class="text-yellow-300 flex">
+                            <span class="text-yellow-100">
+                                {#if $register_data[register.mnemonic].base == 16}
+                                    0x
+                                {:else if $register_data[register.mnemonic].base == 2}
+                                    0b
+                                {/if}
+                            </span>
+                            <input 
+                                type="text" 
+                                class="font-mono"
+                                max="{parseInt("1".repeat(tab_data.bits),2)}" 
+                                style="/*max-width: {parseInt("1".repeat(tab_data.bits),2).toString().length}ch;*/"
+                                size={$register_data[register.mnemonic].data.length+2}
+                                value={$register_data[register.mnemonic].data}
+                                on:keydown={(e) => {
+                                    // check if its a digit
+                                    if (e.key.match(/[0-9]/)) {
+                                        // check if it exceeds the max value
+                                        if (parseInt(e.target.value + e.key, $register_data[register.mnemonic].base) > parseInt("1".repeat(tab_data.bits),2)) {
+                                            e.preventDefault();
+                                            return false;
+                                        } else {
+                                            // set the register value
+                                            e.preventDefault();
+                                            setRegisterValue(register.mnemonic, e.target.value + e.key);
+                                        }
+                                    } else if (e.key == "Backspace") {
+                                        // set the register value
+                                        setRegisterValue(register.mnemonic, e.target.value.slice(0, -1));
+                                    } else {
+                                        e.preventDefault();
+                                        return false;
+                                    }
+                                }}
+                            />
+                        </span>
+                    {:else}
+                        <span class="text-yellow-300 flex font-mono">
+                            <span class="text-yellow-100">
+                                {#if $register_data[register.mnemonic].base == 16}
+                                    0x
+                                {:else if $register_data[register.mnemonic].base == 2}
+                                    0b
+                                {/if}
+                            </span>
+                            {$register_data[register.mnemonic].data}
+                        </span>
+                    {/if}
                 </div>
             {/each}
         </div>

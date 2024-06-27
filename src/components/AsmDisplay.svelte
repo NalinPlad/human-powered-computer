@@ -12,7 +12,8 @@
     
     // set RIP to main
     // initRegisters();
-    setRegisterValue("RIP", main);
+
+    setRegisterValue("RIP", main, 16);
     
     // console.log(main.instructions[0].address,16);
 
@@ -32,7 +33,7 @@
                         <!-- svelte-ignore a11y-click-events-have-key-events -->
                         <!-- svelte-ignore a11y-no-static-element-interactions -->
                         <!-- svelte-ignore a11y-missing-attribute -->
-                        <a class="hover:bg-slate-600 cursor-pointer" on:click={() => {setRegisterValue("RIP", instruction.address)}}>0x{instruction.address.replace("1000","…")+"\n"}</a>
+                        <a class="hover:bg-slate-600 cursor-pointer" on:click={() => {setRegisterValue("RIP", instruction.address, 16)}}>0x{instruction.address.replace("1000","…")+"\n"}</a>
                     {/if}
                 {/each}
                 <br/>
