@@ -1,25 +1,6 @@
 <script>
+    import { register_data, getRegisterValue, setRegisterValue, initRegisters } from '../registerStore';
     import {sizes} from './CPURegisterData.json';
-
-
-	const register_data = sizes;
-	
-	const special_initializations = {
-		// "EIP":
-	}
-
-	register_data.forEach((s) => {
-		s.registers.forEach((r) => {
-			switch (s.bits) {
-				case 64:
-					r.data = Uint8Array
-			}
-		});
-	});
-
-	
-
-	// const register_data = sizes;
 
     // included in tailwind.config.mjs in safelist, to force inclusion in bundle
     const colors = {
@@ -33,14 +14,15 @@
         "reserved_SYMBOL": "text-red-300",
     }
 
+    // long tab names
     const tab_names = ["64-bit", "32-bit", "16-bit", "8-bit Low", "8-bit High"];
 
     let tab = "64-bit";
-    let tab_data = register_data.filter((s) => s.name == tab)[0];
+    let tab_data = sizes.filter((s) => s.name == tab)[0];
 </script>
-<div class="flex flex-col bg-cyan-900 p-2 rounded-xl w-96 h-fit shadow-xl">
-    <h1 class="text-2xl font-serif text-yellow-300 mb-2 text-center drop-shadow-lg"><b>CPYOU</b> <i class="text-yellow-400">Registers</i></h1>
-
+<div class="flex flex-col bg-cyan-900 p-2 rounded-xl w-96 h-fit shadow-xl justify-center items-center">
+    <h1 class="text-2xl font-serif text-yellow-300 text-center drop-shadow-lg mb-0"><b>CPYOU</b> <i class="text-yellow-400">Registers</i></h1>
+    <b class="text-center mb-1 text-white bg-cyan-800 w-fit">BASE 10</b>
     <!-- svelte-ignore a11y-missing-attribute -->
     <div role="tablist" class="tabs tabs-lifted">
 
@@ -54,7 +36,7 @@
                     tab == name ? 'tab-active' : ''
                 }" 
                 on:click={() => {
-                    tab = name; tab_data = register_data.filter((s) => s.name == name)[0];
+                    tab = name; tab_data = sizes.filter((s) => s.name == name)[0];
                 }}
             >
                 {tab == name ? name : name.replaceAll("-bit", "B").replaceAll("Low", "L").replaceAll("High", "H")}
@@ -68,6 +50,8 @@
             {#each tab_data.registers as register}
                 <div class="p-2 text-xs {colors[register.type]} border-green-100 border">
                     <span>{register.mnemonic} <i class="text-xs {colors[register.type+"_SYMBOL"]}">{register.type=="general-purpose" ? "G" : "R"}</i></span>
+                    <br/>
+                    <span class="text-yellow-300">{$register_data[register.mnemonic].data}</span>
                 </div>
             {/each}
         </div>
