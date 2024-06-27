@@ -23,12 +23,7 @@
 <div class="flex flex-col bg-cyan-900 p-2 rounded-xl w-96 h-fit shadow-xl justify-center items-center">
     <h1 class="text-2xl font-serif text-yellow-300 text-center drop-shadow-lg mb-0"><b>CPYOU</b> <i class="text-yellow-400">Registers</i></h1>
     <!-- <b class="text-center mb-2 text-white bg-cyan-800 w-fit text-xs"><span class="font-serif italic">Now in... </span>BASE 10!</b> -->
-     <input 
-        type="text"
-        class="font-mono"
-        max=10
-        size="3"
-     />
+     
     <!-- svelte-ignore a11y-missing-attribute -->
     <div role="tablist" class="tabs tabs-lifted w-full">
 

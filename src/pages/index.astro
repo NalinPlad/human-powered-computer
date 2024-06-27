@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro"
 import AsmDisplay from "../components/AsmDisplay.svelte"
 import AsmManual from "../components/AsmManual.svelte"
 import CPURegisters from "../components/CPURegisters.svelte"
-
+import CPUStack from "../components/CPUStack.svelte"
 ---
 
 <Layout title="CPYOU">
@@ -11,5 +11,6 @@ import CPURegisters from "../components/CPURegisters.svelte"
         <CPURegisters client:load/>
         <AsmDisplay client:load/>
         <AsmManual client:load/>
+        <CPUStack client:load/>
     </main>
 </Layout>
