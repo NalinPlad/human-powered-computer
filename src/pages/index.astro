@@ -9,8 +9,8 @@ import CPUStack from "../components/CPUStack.svelte"
 <Layout title="CPYOU">
     <main class="flex flex-wrap gap-10 p-10 justify-around">
         <CPURegisters client:load/>
+        <CPUStack client:load/>
         <AsmDisplay client:load/>
         <AsmManual client:load/>
-        <CPUStack client:load/>
     </main>
 </Layout>

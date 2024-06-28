@@ -12,14 +12,20 @@
         if (registers.includes(value.toUpperCase())) {
             stack.set(getRegisterValue(value.toUpperCase()));
         } else if (value.isNumber()) {
-            stack.set(parseInt(value));
+            stack.set(value);
+        } else {
+            return
         }
+        value = "";
     }
 
     function pop() {
         if (registers.includes(value.toUpperCase())) {
             setRegisterValue(value.toUpperCase(), stack.get());
+        } else {
+            return
         }
+        value = "";
     
     }
 </script>
