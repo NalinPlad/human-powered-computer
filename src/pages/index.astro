@@ -4,13 +4,63 @@ import AsmDisplay from "../components/AsmDisplay.svelte"
 import AsmManual from "../components/AsmManual.svelte"
 import CPURegisters from "../components/CPURegisters.svelte"
 import CPUStack from "../components/CPUStack.svelte"
+import CPUArithmeticLogicUnit from "../components/CPUArithmeticLogicUnit.svelte"
 ---
 
 <Layout title="CPYOU">
-    <main class="flex flex-wrap gap-10 p-10 justify-around">
-        <CPURegisters client:load/>
-        <CPUStack client:load/>
-        <AsmDisplay client:load/>
-        <AsmManual client:load/>
+    <main class="layout">
+        <div class="registers item">
+            <CPURegisters client:load/>
+        </div>
+        <div class="stack item">
+            <CPUStack client:load/>
+        </div>
+        <div class="manual item">
+            <AsmManual client:load/>
+        </div>
+        <div class="alu item">
+            <CPUArithmeticLogicUnit client:load/>
+        </div>
+        <div class="display item">
+            <AsmDisplay client:load/>
+        </div>
     </main>
+    <style>
+        .layout {
+            display: grid;
+            padding: 1rem;
+            /* grid-template-columns: repeat(2, 1fr); */
+            grid-template-rows: auto;
+            grid-template-areas: 
+                "registers stack display"
+                "manual alu display";
+        }
+        
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .registers {
+            grid-area: registers;
+        }
+
+        .stack {
+            grid-area: stack;
+        }
+
+        .manual {
+            grid-area: manual;
+        }
+
+        .alu {
+            grid-area: alu;
+        }
+
+        .display {
+            grid-area: display;
+        }
+
+    </style>
 </Layout>

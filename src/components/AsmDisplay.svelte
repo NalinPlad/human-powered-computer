@@ -19,7 +19,7 @@
 
 </script>
 
-<div class="flex flex-col items-center bg-slate-900 p-5 gap-y-5 rounded-xl">
+<div class="flex flex-col items-center bg-slate-900 p-5 gap-y-5 rounded-xl w-fit">
     <b class="font-mono">x86 INSTRUCTIONS</b>
     <!-- <div class="rounded"> -->
     <div class="flex">
@@ -28,12 +28,12 @@
                 <br/>
                 {#each block.instructions as instruction}
                     {#if instruction.address == $register_data["RIP"].data}
-                        <span class="bg-slate-500 text-white px-3"><b class="text-yellow-400 drop-shadow-md">RIP </b>0x{instruction.address.replace("1000", "…")+"\n"}</span>
+                        <span class="bg-slate-500 text-white px-3 whitespace-nowrap"><b class="text-yellow-400 drop-shadow-md">RIP </b>0x{instruction.address.replace("1000", "…")+"\n"}</span>
                     {:else}
                         <!-- svelte-ignore a11y-click-events-have-key-events -->
                         <!-- svelte-ignore a11y-no-static-element-interactions -->
                         <!-- svelte-ignore a11y-missing-attribute -->
-                        <a class="hover:bg-slate-600 cursor-pointer" on:click={() => {setRegisterValue("RIP", instruction.address, 16)}}>0x{instruction.address.replace("1000","…")+"\n"}</a>
+                        <a class="hover:bg-slate-600 cursor-pointer whitespace-nowrap" on:click={() => {setRegisterValue("RIP", instruction.address, 16)}}>0x{instruction.address.replace("1000","…")+"\n"}</a>
                     {/if}
                 {/each}
                 <br/>
