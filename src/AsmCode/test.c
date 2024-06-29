@@ -2,8 +2,8 @@ int magic(int a, int b) {
   return a * b + 13;
 }
 
-int example(int a, int b) {
-  return a / b - 12;
+int test(int a, int b) {
+  return a / b - 30;
 }
 
 int main() {

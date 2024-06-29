@@ -47,7 +47,7 @@
       "raw": "<_magic>:\n\tpush rbp\n\tmov rbp, rsp\n\tmov dword ptr [rbp - 4], edi\n\tmov dword ptr [rbp - 8], esi\n\tmov eax, dword ptr [rbp - 4]\n\timul eax, dword ptr [rbp - 8]\n\tadd eax, 13\n\tpop rbp\n\tret\n\tnop word ptr cs:[rax + rax]\n"
     },
     {
-      "name": "<_example>:",
+      "name": "<_test>:",
       "instructions": [
         {
           "address": "100000f50",
@@ -79,7 +79,7 @@
         },
         {
           "address": "100000f61",
-          "instruction": "sub eax, 12"
+          "instruction": "sub eax, 30"
         },
         {
           "address": "100000f64",
@@ -94,7 +94,7 @@
           "instruction": "nop word ptr cs:[rax + rax]"
         }
       ],
-      "raw": "<_example>:\n\tpush rbp\n\tmov rbp, rsp\n\tmov dword ptr [rbp - 4], edi\n\tmov dword ptr [rbp - 8], esi\n\tmov eax, dword ptr [rbp - 4]\n\tcdq\n\tidiv dword ptr [rbp - 8]\n\tsub eax, 12\n\tpop rbp\n\tret\n\tnop word ptr cs:[rax + rax]\n"
+      "raw": "<_test>:\n\tpush rbp\n\tmov rbp, rsp\n\tmov dword ptr [rbp - 4], edi\n\tmov dword ptr [rbp - 8], esi\n\tmov eax, dword ptr [rbp - 4]\n\tcdq\n\tidiv dword ptr [rbp - 8]\n\tsub eax, 30\n\tpop rbp\n\tret\n\tnop word ptr cs:[rax + rax]\n"
     },
     {
       "name": "<_main>:",
@@ -151,5 +151,5 @@
       "raw": "<_main>:\n\tpush rbp\n\tmov rbp, rsp\n\tsub rsp, 16\n\tmov dword ptr [rbp - 4], 0\n\tmov dword ptr [rbp - 8], 25\n\tmov dword ptr [rbp - 12], 13\n\tmov edi, dword ptr [rbp - 8]\n\tmov esi, dword ptr [rbp - 12]\n\tcall 0x100000f30 <_magic>\n\tadd rsp, 16\n\tpop rbp\n\tret\n"
     }
   ],
-  "raw_full": "<_magic>:\n\tpush rbp\n\tmov rbp, rsp\n\tmov dword ptr [rbp - 4], edi\n\tmov dword ptr [rbp - 8], esi\n\tmov eax, dword ptr [rbp - 4]\n\timul eax, dword ptr [rbp - 8]\n\tadd eax, 13\n\tpop rbp\n\tret\n\tnop word ptr cs:[rax + rax]\n\n<_example>:\n\tpush rbp\n\tmov rbp, rsp\n\tmov dword ptr [rbp - 4], edi\n\tmov dword ptr [rbp - 8], esi\n\tmov eax, dword ptr [rbp - 4]\n\tcdq\n\tidiv dword ptr [rbp - 8]\n\tsub eax, 12\n\tpop rbp\n\tret\n\tnop word ptr cs:[rax + rax]\n\n<_main>:\n\tpush rbp\n\tmov rbp, rsp\n\tsub rsp, 16\n\tmov dword ptr [rbp - 4], 0\n\tmov dword ptr [rbp - 8], 25\n\tmov dword ptr [rbp - 12], 13\n\tmov edi, dword ptr [rbp - 8]\n\tmov esi, dword ptr [rbp - 12]\n\tcall 0x100000f30 <_magic>\n\tadd rsp, 16\n\tpop rbp\n\tret\n\n"
+  "raw_full": "<_magic>:\n\tpush rbp\n\tmov rbp, rsp\n\tmov dword ptr [rbp - 4], edi\n\tmov dword ptr [rbp - 8], esi\n\tmov eax, dword ptr [rbp - 4]\n\timul eax, dword ptr [rbp - 8]\n\tadd eax, 13\n\tpop rbp\n\tret\n\tnop word ptr cs:[rax + rax]\n\n<_test>:\n\tpush rbp\n\tmov rbp, rsp\n\tmov dword ptr [rbp - 4], edi\n\tmov dword ptr [rbp - 8], esi\n\tmov eax, dword ptr [rbp - 4]\n\tcdq\n\tidiv dword ptr [rbp - 8]\n\tsub eax, 30\n\tpop rbp\n\tret\n\tnop word ptr cs:[rax + rax]\n\n<_main>:\n\tpush rbp\n\tmov rbp, rsp\n\tsub rsp, 16\n\tmov dword ptr [rbp - 4], 0\n\tmov dword ptr [rbp - 8], 25\n\tmov dword ptr [rbp - 12], 13\n\tmov edi, dword ptr [rbp - 8]\n\tmov esi, dword ptr [rbp - 12]\n\tcall 0x100000f30 <_magic>\n\tadd rsp, 16\n\tpop rbp\n\tret\n\n"
 }
