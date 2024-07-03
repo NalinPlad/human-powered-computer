@@ -18,9 +18,9 @@ import CPUArithmeticLogicUnit from "../components/CPUArithmeticLogicUnit.svelte"
         <div class="manual item">
             <AsmManual client:load/>
         </div>
-        <div class="alu item">
+        <!-- <div class="alu item">
             <CPUArithmeticLogicUnit client:load/>
-        </div>
+        </div> -->
         <div class="display item">
             <AsmDisplay client:load/>
         </div>
@@ -33,7 +33,7 @@ import CPUArithmeticLogicUnit from "../components/CPUArithmeticLogicUnit.svelte"
             grid-template-rows: auto;
             grid-template-areas: 
                 "registers stack display"
-                "manual alu display";
+                "manual manual display";
         }
         
         .item {
